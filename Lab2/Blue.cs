@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
@@ -10,9 +10,9 @@ namespace Lab2
         public double Task1(int n, double x)
         {
             double answer = 0;
-
             // code here
-
+            for (int i = 0; i <= n; ++i)
+                answer += Math.Sin(i * x) / Math.Pow(x, i - 1);
             // end
 
             return answer;
@@ -22,7 +22,9 @@ namespace Lab2
             double answer = 0;
 
             // code here
-
+            int fact = 1;
+            for (int i = 1; i <= n; ++i, fact *= i)
+                answer += Math.Pow(-1, n) * (Math.Pow(5, n) /);
             // end
 
             return answer;
