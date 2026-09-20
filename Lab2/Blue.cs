@@ -11,8 +11,11 @@ namespace Lab2
         {
             double answer = 0;
             // code here
-            for (int i = 0; i <= n; ++i)
-                answer += Math.Sin(i * x) / Math.Pow(x, i - 1);
+            double power = 1.0;
+            for (int i = 1; i <= n; ++i){
+                answer += Math.Sin(i * x) / power;
+                power *= x;
+            }
             // end
 
             return answer;
@@ -22,9 +25,15 @@ namespace Lab2
             double answer = 0;
 
             // code here
-            int fact = 1;
-            for (int i = 1; i <= n; ++i, fact *= i)
-                answer += Math.Pow(-1, n) * (Math.Pow(5, n) /);
+            double power = 5.0;
+            for (double i = 1.0, fact = 1.0; i <= n; ++i){
+                fact *= i;
+                if (i % 2 != 0)
+                    answer -= power / fact;
+                else
+                    answer += power / fact;
+                power *= 5;
+            }
             // end
 
             return answer;
@@ -34,7 +43,13 @@ namespace Lab2
             long answer = 0;
 
             // code here
-
+            int a = 0, b = 1, next = 0;
+            for (int i = 0; i <= n; ++i){
+                next = a + b;
+                answer += a;
+                a = b;
+                b = next;
+            }
             // end
 
             return answer;
@@ -44,7 +59,10 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            for (int s = 0, n = 1; s <= L; ++n){
+                s += a + (n - 1) * h;
+                answer = n;
+            }
             // end
 
             return answer;
