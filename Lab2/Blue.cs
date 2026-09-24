@@ -44,7 +44,9 @@ namespace Lab2
 
             // code here
             int a = 0, b = 1, next = 0;
-            for (int i = 0; i <= n; ++i){
+
+            for (int i = 0; i < n; ++i)
+            {
                 next = a + b;
                 answer += a;
                 a = b;
@@ -59,9 +61,10 @@ namespace Lab2
             int answer = 0;
 
             // code here
-            for (int s = 0, n = 1; s <= L; ++n){
-                s += a + (n - 1) * h;
-                answer = n;
+            for (int s = 0, i = 0; s <= L; ++i){
+                s += a + i * h;
+                if (s <= L)
+                    answer += 1;
             }
             // end
 
@@ -72,6 +75,19 @@ namespace Lab2
             double answer = 0;
 
             // code here
+            double ch = 0, zn = 1;
+            double elem = ch / zn;
+            int i = 1;
+            for (; elem > 0.0001;)
+            {
+                ch += i;
+                zn *= x;
+                answer += elem;
+                elem = ch / zn;
+                i++;
+
+            }
+
 
             // end
 
@@ -82,7 +98,8 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            for (; S < L;answer += h)
+                S *= 2;
             // end
 
             return answer;
@@ -94,6 +111,15 @@ namespace Lab2
             int c = 0;
 
             // code here
+            a += S;
+            for (int n = 1; n <= 7; ++n)
+            {
+                a *= 1 + (I / 100);
+                S += a;
+            }
+            double d = 0;
+            d += S;
+
 
             // end
 
